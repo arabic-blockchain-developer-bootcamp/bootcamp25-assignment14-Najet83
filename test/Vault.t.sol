@@ -2,7 +2,7 @@
 pragma solidity ^0.8.19;
 
 import "forge-std/Test.sol";
-import "../src/Vault.sol";
+import {Vault} from "../src/Vault.sol";
 
 contract VaultTest is Test {
     Vault public vault;
@@ -29,7 +29,7 @@ contract VaultTest is Test {
         // TODO: prank user, deposit 2 ether, withdraw 1 ether
         vm.startPrink(user);
         vault.deposit({value: 2 ether});
-        vaultault.withdraw(1 ether);
+        vault.withdraw(1 ether);
         assertEq(vault.balances(user), 1 ether);
         vm.stopPrank(); // Stop impersonating the user
         

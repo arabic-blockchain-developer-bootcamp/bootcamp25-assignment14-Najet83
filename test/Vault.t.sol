@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: UNLICENSED
+// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
 
 import "forge-std/Test.sol";
@@ -21,9 +21,8 @@ contract VaultTest is Test {
         // TODO: prank user and call deposit with 1 ether
         vm.startPrink(user);
         vault.deposit({value: 1 ether});
-        vm.stopPrank(); // Stop impersonating the user
         assertEq(vault.balances(user), 1 ether);
-       
+        vm.stopPrank(); // Stop impersonating the user
     }
 
     function testWithdraw() public {
@@ -31,8 +30,8 @@ contract VaultTest is Test {
         vm.startPrink(user);
         vault.deposit({value: 2 ether});
         vaultault.withdraw(1 ether);
-        vm.stopPrank(); // Stop impersonating the user
         assertEq(vault.balances(user), 1 ether);
+        vm.stopPrank(); // Stop impersonating the user
         
     }
 

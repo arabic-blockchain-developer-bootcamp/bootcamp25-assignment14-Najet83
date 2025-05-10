@@ -14,7 +14,7 @@ contract VaultTest is Test {
         vault = new Vault();
 
         // TODO: Fund the user with some ether using vm.deal
-        vm.deal(user,10 ether);
+        vm.deal(user, 10 ether);
     }
 
     function testDeposit() public {
@@ -42,7 +42,7 @@ contract VaultTest is Test {
         vm.expectRevert();
 
         // TODO: try to withdraw 2 ether
-        vault.withdraw((2 ether));
+        vault.withdraw(2 ether);
         vm.stopPrank(); // Stop impersonating the user
     }
 
